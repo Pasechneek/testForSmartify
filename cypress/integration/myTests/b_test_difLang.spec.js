@@ -9,8 +9,7 @@ const disclaimer = [
     'Disclaimer', 
     'Feragat Etmek', 
     'Avertissement', 
-    'zrezygnuj',
-    //zrezygnuj
+    'Zrezygnuj',
     '免責事項', 
     '면책', 
     'Smentita'
@@ -99,7 +98,7 @@ const theLink = [
 ];
 
 //const linkGenerator = (langCode) => 'https://playsstar.com/worldwide/aisad-ob-' + langCode;
-
+// link generator imposible to use becouse postfixes are too different
 //console.log(linkGenerator('ge'));
 
 const engine = (theLink, disclaimer, privacyPolicy, adverteiseWithUs, impressum, health, fitness, sports) => {
@@ -122,62 +121,40 @@ const engine = (theLink, disclaimer, privacyPolicy, adverteiseWithUs, impressum,
         });
     
         it('Impressum test', () => {
-        cy.get('#menu-item-9785 > a').should('contain', impressum);
+            cy.get('#menu-item-9785 > a').should('contain', impressum);
         });
-
 
         it('Health test', () => {
             cy.get('#menu-item-1248 > a').should('contain', health);
-            });
+        });
         
-            it('Fitness test', () => {
+        it('Fitness test', () => {
             cy.get('#menu-item-1246 > a').should('contain', fitness);
-            });
+        });
         
-            it('Sports test', () => {
-                cy.get('#menu-item-6313 > a').should('contain', sports);
-            });
+        it('Sports test', () => {
+            cy.get('#menu-item-6313 > a').should('contain', sports);
+        });
     });
-
-
+    
     let engineResult;
     engineResult = 'done';
-    //engineResult = `link ${theLink}\n disclaimer is ${disclaimer}\n privacyPolicy is ${privacyPolicy}\n adverteiseWithUs is ${adverteiseWithUs}\n impressum is ${impressum}\n`;
     return engineResult;
 };
-
-
 
 
 const headersTest = (langCode, disclaimer, privacyPolicy, adverteiseWithUs, impressum) => {
     let counter = 0;
     while (counter < (langCode.length)) {
-        let currentCode = langCode[counter];
-        console.log('the counter is ' + counter);
+        //let currentCode = langCode[counter];
+        //console.log('the counter is ' + counter);
         
-
-        //let theLink = linkGenerator(langCode[counter]);
-        //console.log('and link is ' + theLink);
-
         let result;
         result = engine(theLink[counter], disclaimer[counter], privacyPolicy[counter], adverteiseWithUs[counter], impressum[counter], health[counter], fitness[counter], sports[counter]);
-        //console.log(result);
-
+        
         counter += 1;
     }
     return counter;
 };
 
 headersTest(langCode, disclaimer, privacyPolicy, adverteiseWithUs, impressum);
-
-
-
-
-/*
-
-*/
-
-
-
-
-// special test     'https://playsstar.com/404-example-it' // 11
