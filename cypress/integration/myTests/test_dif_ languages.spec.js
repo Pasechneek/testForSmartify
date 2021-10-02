@@ -46,6 +46,45 @@ const impressum = [
     'Publicación', 'Impressum', 'Impressum', 'Impressum', 'Yasal Uyarı', 'Impressum', 'Impressum', '印象', '발행', 'Imprimere'
 ];
 
+const health = [
+    'Salud',
+    'Saúde',
+    'Gesundheit',
+    'Gezondheid',
+    'Sağlık',
+    'Santé',
+    'Zdrowie',
+    '健康',
+    '건강',
+    'Salute'
+];
+
+const fitness = [
+    'Fitness',
+    'Fitness',
+    'Fitness',
+    'Fitness',
+    'Fitness',
+    'Fitness',
+    'Fitness',
+    'フィットネス',
+    '피트니스',
+    'Fitness'
+];
+
+const sports = [
+    'Deportes',
+    'Esportes',
+    'Sport',
+    'Sport',
+    'Spor',
+    'Sport',
+    'Sporty',
+    'スポーツ',
+    '스포츠',
+    'Sport'
+];
+
 const theLink = [
     'https://playsstar.com/worldwide/actsp-ob-sp',
     'https://playsstar.com/worldwide/agedif-ob-pr',
@@ -63,7 +102,7 @@ const theLink = [
 
 //console.log(linkGenerator('ge'));
 
-const engine = (theLink, disclaimer, privacyPolicy, adverteiseWithUs, impressum) => {
+const engine = (theLink, disclaimer, privacyPolicy, adverteiseWithUs, impressum, health, fitness, sports) => {
 
     describe(`Testing version on ${theLink}`, () => {
         it('website visit', () => {
@@ -85,6 +124,19 @@ const engine = (theLink, disclaimer, privacyPolicy, adverteiseWithUs, impressum)
         it('Impressum test', () => {
         cy.get('#menu-item-9785 > a').should('contain', impressum);
         });
+
+
+        it('Health test', () => {
+            cy.get('#menu-item-1248 > a').should('contain', health);
+            });
+        
+            it('Fitness test', () => {
+            cy.get('#menu-item-1246 > a').should('contain', fitness);
+            });
+        
+            it('Sports test', () => {
+                cy.get('#menu-item-6313 > a').should('contain', sports);
+            });
     });
 
 
@@ -108,8 +160,8 @@ const headersTest = (langCode, disclaimer, privacyPolicy, adverteiseWithUs, impr
         //console.log('and link is ' + theLink);
 
         let result;
-        result = engine(theLink[counter], disclaimer[counter], privacyPolicy[counter], adverteiseWithUs[counter], impressum[counter]);
-        console.log(result);
+        result = engine(theLink[counter], disclaimer[counter], privacyPolicy[counter], adverteiseWithUs[counter], impressum[counter], health[counter], fitness[counter], sports[counter]);
+        //console.log(result);
 
         counter += 1;
     }
@@ -122,17 +174,7 @@ headersTest(langCode, disclaimer, privacyPolicy, adverteiseWithUs, impressum);
 
 
 /*
-        it('Health test', () => {
-        cy.get('#menu-item-1248 > a').should('contain', 'Health');
-        });
-    
-        it('Fitness test', () => {
-        cy.get('#menu-item-1246 > a').should('contain', 'Fitness');
-        });
-    
-        it('Sports test', () => {
-            cy.get('#menu-item-6313 > a').should('contain', 'Sports');
-        });
+
 */
 
 

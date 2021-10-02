@@ -19,7 +19,11 @@ Errors:
 language - polish - wrong Disclaimer 
 task:    Zrezygnuj
 website: zrezygnuj
-google translator: zastrzeżenie
+
+
+language - sp - wrong sports
+website: Desportes
+task:    Deportes
 
 
 
