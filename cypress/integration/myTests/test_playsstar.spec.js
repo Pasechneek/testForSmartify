@@ -20,7 +20,15 @@ describe('Testing english version', () => {
     });
 
     it('Health test', () => {
-        cy.get('#menu-item-9785 > a').should('contain', 'Health');
-        });
+    cy.get('#menu-item-1248 > a').should('contain', 'Health');
+    });
+
+    it('Fitness test', () => {
+    cy.get('#menu-item-1246 > a').should('contain', 'Fitness');
+    });
+
+    it('Sports test', () => {
+        cy.get('#menu-item-6313 > a').should('contain', 'Sports');
+    });
 });
 
