@@ -3,14 +3,7 @@
 **cd** into project folder
 
 to start
-**use** make run
-
-
-
- 
-some sources of informaton: <br />
-https://www.youtube.com/watch?v=N0Eqlz5G-Jo
-https://vc.ru/dev/154739-testiruem-veb-prilozhenie-s-cypress
+**use comand** make run
 
 
 
@@ -25,9 +18,11 @@ language - sp - wrong sports
 website: Desportes
 task:    Deportes
 
-#3
-website visit - all ( Cannot read properties of null (reading 'style'))
 
-#4
-404 page - cy.visit() failed trying to load
+ 
+some sources of informaton: <br />
+https://www.youtube.com/watch?v=N0Eqlz5G-Jo <br />
+https://vc.ru/dev/154739-testiruem-veb-prilozhenie-s-cypress <br />
+https://www.youtube.com/watch?v=k7Z5_jJPOlU
+
 

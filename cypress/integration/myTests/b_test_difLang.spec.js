@@ -97,12 +97,8 @@ const theLink = [
     'https://playsstar.com/worldwide/altar-ob-it',
 ];
 
-//const linkGenerator = (langCode) => 'https://playsstar.com/worldwide/aisad-ob-' + langCode;
-// link generator imposible to use becouse postfixes are too different
-//console.log(linkGenerator('ge'));
 
 const engine = (theLink, disclaimer, privacyPolicy, adverteiseWithUs, impressum, health, fitness, sports) => {
-
     describe(`Testing version on ${theLink}`, () => {
         it('website visit', () => {
             cy.visit(theLink);
@@ -146,9 +142,6 @@ const engine = (theLink, disclaimer, privacyPolicy, adverteiseWithUs, impressum,
 const headersTest = (langCode, disclaimer, privacyPolicy, adverteiseWithUs, impressum) => {
     let counter = 0;
     while (counter < (langCode.length)) {
-        //let currentCode = langCode[counter];
-        //console.log('the counter is ' + counter);
-        
         let result;
         result = engine(theLink[counter], disclaimer[counter], privacyPolicy[counter], adverteiseWithUs[counter], impressum[counter], health[counter], fitness[counter], sports[counter]);
         

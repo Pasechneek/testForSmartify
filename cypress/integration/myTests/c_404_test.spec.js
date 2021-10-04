@@ -1,6 +1,7 @@
 describe('Testing 404 version', () => {
-    it('website visit', () => {
-        cy.visit('https://playsstar.com/404-example-it');
+    it('site with 404 visit', () => {
+        cy.request({url: 'https://playsstar.com/404-example-it', failOnStatusCode: false}).its('status').should('equal', 404)
+        cy.visit('https://playsstar.com/404-example-it', {failOnStatusCode: false})
     });
     
     it('Disclaymer check', () => {
